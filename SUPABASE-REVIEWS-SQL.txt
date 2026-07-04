@@ -1,0 +1,30 @@
+-- Capalot Cheese — Simple Reviews table
+-- Run this in Supabase SQL Editor.
+-- This allows visitors to submit a review and lets everyone see reviews.
+
+create table if not exists reviews (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users(id) on delete set null,
+  name text not null,
+  stars integer not null check (stars >= 1 and stars <= 5),
+  body text not null,
+  created_at timestamp with time zone default now()
+);
+
+alter table reviews enable row level security;
+
+drop policy if exists "Anyone can view reviews" on reviews;
+drop policy if exists "Anyone can add reviews" on reviews;
+drop policy if exists "Users can add their own review" on reviews;
+drop policy if exists "Users can update their own review" on reviews;
+drop policy if exists "Users can delete their own review" on reviews;
+
+create policy "Anyone can view reviews"
+on reviews for select
+using (true);
+
+create policy "Anyone can add reviews"
+on reviews for insert
+with check (true);
+
+create index if not exists idx_reviews_created_at on reviews(created_at desc);
