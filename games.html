@@ -615,23 +615,26 @@ textarea{min-height:120px;resize:vertical}
   select{
     max-width: 100%;
   }
-  @media (max-width: 768px){
- .links.open{
-  display:flex !important;
-  position:absolute;
-  top:78px;
-  left:16px;
-  right:16px;
-  flex-direction:column;
-  background:#080808;
-  border:1px solid rgba(255,255,255,.12);
-  padding:16px;
-  z-index:9999;
+  .links a.login{
+  display:none;
 }
 
-  .links.open a{
-    padding:12px;
-    border-bottom:1px solid rgba(255,255,255,.08);
+@media (max-width:768px){
+  .links.open{
+    display:flex !important;
+    position:absolute;
+    top:78px;
+    left:16px;
+    right:16px;
+    flex-direction:column;
+    background:#080808;
+    border:1px solid rgba(255,255,255,.12);
+    padding:16px;
+    z-index:9999;
+  }
+
+  .links.open a.login{
+    display:flex;
   }
 }
 }
