@@ -518,7 +518,11 @@ textarea{min-height:120px;resize:vertical}
   .gamesGrid{grid-template-columns:repeat(2,1fr)}
   .footGrid{grid-template-columns:1fr}
   .copyright{display:block}
-  .actions .login{display:none}
+  .actions .login{
+  display:inline-flex;
+  padding:10px 12px;
+  font-size:11px;
+}
 }
 
 @media(max-width:520px){
@@ -653,6 +657,7 @@ textarea{min-height:120px;resize:vertical}
 <h2>CAPALOT<br><span>CHEESE</span> <small class="store">.STORE</small></h2>
 </div>
 <nav class="links" id="primaryNav" aria-label="Primary">
+  <a class="login" href="login.html">LOGIN</a>
 <a href="index.html">HOME</a>
 <a href="games.html">GAMES</a>
 <a href="features.html">FEATURES</a>
