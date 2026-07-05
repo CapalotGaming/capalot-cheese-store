@@ -603,6 +603,85 @@ textarea{min-height:120px;resize:vertical}
   .toast{left:16px;right:16px;max-width:none}
 }
 
+@media (max-width: 768px){
+  .wrap{
+    width: min(100% - 28px, 1180px);
+  }
+
+  .nav{
+    height: auto;
+    padding: 14px 0;
+  }
+
+  .brand img{
+    width: 72px;
+  }
+
+  .brand h2{
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .links{
+    display: none;
+  }
+
+  .actions{
+    gap: 8px;
+  }
+
+  .login{
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .pageHero{
+    padding: 48px 0 36px;
+    min-height: auto;
+  }
+
+  .pageHero h1,
+  .hero h1{
+    font-size: 34px;
+    line-height: 1.05;
+  }
+
+  .section{
+    padding: 44px 0;
+  }
+
+  .grid,
+  .cards,
+  .featuresGrid,
+  .gamesGrid,
+  .reviewGrid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .card,
+  .panel,
+  .reviewCard,
+  .featureCard{
+    padding: 18px;
+  }
+
+  .cartPanel,
+  .checkoutModal,
+  .modal{
+    width: calc(100vw - 24px);
+    max-width: none;
+    max-height: calc(100vh - 24px);
+  }
+
+  button,
+  .btn,
+  input,
+  textarea,
+  select{
+    max-width: 100%;
+  }
+}
+
 /* -------------------- accessibility: reduced motion -------------------- */
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
